@@ -22,6 +22,5 @@ func _physics_process(delta):
 			
 			g_force = (G * (mass * body.mass) * 10000 )/pow(distance,2)
 			
-	
-	velocity += desired_velocity * g_force
-	global_position += velocity * delta
+			velocity += desired_velocity * g_force
+			global_position += velocity * delta

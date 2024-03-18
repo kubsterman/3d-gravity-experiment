@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_cou5m"]
 [ext_resource type="PackedScene" uid="uid://dw32gjhgbdqts" path="res://body.tscn" id="1_uggw6"]
-[ext_resource type="Texture2D" uid="uid://cr58anduedual" path="res://seamless-sky-hdri-panorama-360-degrees-angle-view-with-zenith-clouds-use-as-sky-dome-3d-render-illustration_161844-881.png" id="3_hg6gk"]
+[ext_resource type="Texture2D" uid="uid://2tctmv5u1sop" path="res://STScI-H-Whale_galaxy-h-4467x1217.png" id="3_rwa2b"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ttj2a"]
-panorama = ExtResource("3_hg6gk")
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_svp6b"]
+panorama = ExtResource("3_rwa2b")
 
 [sub_resource type="Sky" id="Sky_glkip"]
-sky_material = SubResource("PanoramaSkyMaterial_ttj2a")
+sky_material = SubResource("PanoramaSkyMaterial_svp6b")
 
 [sub_resource type="Environment" id="Environment_o3rag"]
 background_mode = 2
@@ -21,7 +21,7 @@ script = ExtResource("1_cou5m")
 [node name="Body" parent="." instance=ExtResource("1_uggw6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104957, 0.903115, -1.56024)
 mass = 1000.0
-initial_velocity = Vector3(1, 0, 0)
+initial_velocity = Vector3(5, 0, 4)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.987014, -0.0806881, 0.138898, 0.0533813, 0.980304, 0.190145, -0.151505, -0.180261, 0.971881, 2.21012, 0.357986, 3.549)
@@ -32,4 +32,12 @@ environment = SubResource("Environment_o3rag")
 [node name="Body2" parent="." instance=ExtResource("1_uggw6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27382, 0, 0)
 mass = 500.0
-initial_velocity = Vector3(-3, 0, 0)
+initial_velocity = Vector3(-5, 0, 2)
+
+[node name="distance_slider" type="VSlider" parent="."]
+offset_right = 16.0
+offset_bottom = 270.0
+min_value = 1.0
+max_value = 5.0
+step = 0.1
+value = 1.0

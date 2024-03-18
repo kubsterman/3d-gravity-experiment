@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://c58oxpyxy6uy3"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_cou5m"]
+[ext_resource type="PackedScene" uid="uid://dw32gjhgbdqts" path="res://body.tscn" id="1_uggw6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_810n5"]
+
+[sub_resource type="Sky" id="Sky_glkip"]
+sky_material = SubResource("ProceduralSkyMaterial_810n5")
+
+[sub_resource type="Environment" id="Environment_o3rag"]
+background_mode = 2
+background_color = Color(0.419608, 0.709804, 0.87451, 1)
+sky = SubResource("Sky_glkip")
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_cou5m")
+
+[node name="Body" parent="." instance=ExtResource("1_uggw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104957, 0.903115, -1.56024)
+mass = 1000.0
+initial_velocity = Vector3(1, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.987014, -0.0806881, 0.138898, 0.0533813, 0.980304, 0.190145, -0.151505, -0.180261, 0.971881, 2.21012, 0.357986, 3.549)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_o3rag")
+
+[node name="Body2" parent="." instance=ExtResource("1_uggw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27382, 0, 0)
+mass = 500.0
+initial_velocity = Vector3(-3, 0, 0)
