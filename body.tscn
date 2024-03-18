@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw32gjhgbdqts"]
+
+[ext_resource type="Script" path="res://body.gd" id="1_sgvvn"]
+
+[node name="Body" type="Node3D" groups=["Body"]]
+script = ExtResource("1_sgvvn")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]

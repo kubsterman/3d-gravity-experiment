@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c58oxpyxy6uy3"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_cou5m"]
+[ext_resource type="PackedScene" uid="uid://dw32gjhgbdqts" path="res://body.tscn" id="1_uggw6"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_cou5m")
+
+[node name="Body" parent="." instance=ExtResource("1_uggw6")]
+
+[node name="Body2" parent="." instance=ExtResource("1_uggw6")]
+
+[node name="Body3" parent="." instance=ExtResource("1_uggw6")]
+
+[node name="Body4" parent="." instance=ExtResource("1_uggw6")]

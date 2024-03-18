@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw32gjhgbdqts"]
+
+[ext_resource type="Script" path="res://body.gd" id="1_sgvvn"]
+[ext_resource type="Shader" path="res://body.gdshader" id="2_gkev4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6k86i"]
+render_priority = 0
+shader = ExtResource("2_gkev4")
+shader_parameter/emissivity = 10.0
+
+[node name="Body" type="Node3D" groups=["Body"]]
+script = ExtResource("1_sgvvn")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+material_override = SubResource("ShaderMaterial_6k86i")
