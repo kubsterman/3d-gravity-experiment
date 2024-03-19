@@ -13,16 +13,17 @@ func _ready():
 func _physics_process(delta):
 	_indicator_edit()
 	for body in get_parent().bodies_present:
-		if body && body !=self:
+		if body != null && body !=self:
 			desired_velocity.x = (body.global_position.x-global_position.x)
 			desired_velocity.y = (body.global_position.y-global_position.y)
 			desired_velocity.z = (body.global_position.z-global_position.z)
 			
 			var distance = sqrt(pow(body.global_position.x-global_position.x,2) + pow(body.global_position.y-global_position.y,2) + pow(body.global_position.z-global_position.z,2))
+			if distance !=0:
+				g_force = G * ((mass * body.mass))/pow(distance,2)
 			
-			g_force = (G * (mass * body.mass) * 10000 )/pow(distance,2)
-			
-			velocity += desired_velocity * g_force
+			#print(str(velocity) + self.name)
+			velocity += desired_velocity.normalized() * (g_force/mass)
 			global_position += velocity * delta
 
 func _indicator_edit():
@@ -34,3 +35,10 @@ func _indicator_edit():
 	
 	$z_indicator.height = velocity.z
 	$z_indicator.position.z = velocity.z/4
+
+
+func _on_area_3d_area_entered(area):
+	if mass < area.get_parent().mass:
+		area.get_parent().mass += mass
+		queue_free()
+	

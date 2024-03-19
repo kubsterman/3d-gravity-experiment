@@ -1,3 +1,5 @@
+CollisionShape3D
+Area3D
 CSGCylinder3D
 Sprite3D
 VSlider

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dw32gjhgbdqts"]
+[gd_scene load_steps=9 format=3 uid="uid://dw32gjhgbdqts"]
 
 [ext_resource type="Script" path="res://body.gd" id="1_sgvvn"]
 [ext_resource type="Shader" path="res://body.gdshader" id="2_dtrhq"]
@@ -24,6 +24,8 @@ render_priority = 0
 shader = ExtResource("2_y1ihw")
 shader_parameter/Color = Color(0, 1, 0, 1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_1bbr4"]
+
 [node name="Body" type="Node3D" groups=["Body"]]
 script = ExtResource("1_sgvvn")
 
@@ -41,3 +43,10 @@ material = SubResource("ShaderMaterial_2nmox")
 [node name="z_indicator" type="CSGCylinder3D" parent="."]
 transform = Transform3D(0.25, 0, -3.81149e-24, -3.81149e-24, -2.78307e-08, -0.25, 0, 0.636692, -1.09278e-08, 2.08165e-12, 2.08165e-12, 0.662887)
 material = SubResource("ShaderMaterial_6a1ml")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_1bbr4")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

@@ -27,7 +27,8 @@ func cam_look(delta):
 	var sum: Vector3 = Vector3.ZERO
 	
 	for _body in bodies_present:
-		sum += _body.global_position
+		if _body != null:
+			sum += _body.global_position
 	avg_pos = sum/bodies_present.size()
 	
 	$Camera3D.look_at(avg_pos)
@@ -44,4 +45,4 @@ func _unhandled_input(event):
 			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 				zoom_value -= 1
 func _control():
-	pass
+	zoom_value = $distance_slider.value
