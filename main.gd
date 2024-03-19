@@ -33,7 +33,7 @@ func cam_look(delta):
 	$Camera3D.look_at(avg_pos)
 	$Camera3D.global_position = lerp($Camera3D.global_position, floor(avg_pos) + Vector3(zoom_value,zoom_value,zoom_value)*$Camera3D.transform.basis.z, 0.02)
 	
-	print($Camera3D.global_position - avg_pos)
+
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:

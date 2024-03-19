@@ -11,7 +11,7 @@ var desired_velocity: Vector3
 func _ready():
 	velocity = initial_velocity
 func _physics_process(delta):
-	
+	_indicator_edit()
 	for body in get_parent().bodies_present:
 		if body && body !=self:
 			desired_velocity.x = (body.global_position.x-global_position.x)
@@ -24,3 +24,13 @@ func _physics_process(delta):
 			
 			velocity += desired_velocity * g_force
 			global_position += velocity * delta
+
+func _indicator_edit():
+	$x_indicator.height = velocity.x
+	$x_indicator.position.x = velocity.x/4
+	
+	$y_indicator.height = velocity.y
+	$y_indicator.position.y = velocity.y/4
+	
+	$z_indicator.height = velocity.z
+	$z_indicator.position.z = velocity.z/4

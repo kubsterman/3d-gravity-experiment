@@ -3,4 +3,4 @@ res://body.gdshader
 res://body.tscn
 res://body.gd
 res://main.gd
-res://sky.gdshader
+res://color.gdshader
