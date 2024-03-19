@@ -11,7 +11,9 @@ var desired_velocity: Vector3
 func _ready():
 	velocity = initial_velocity
 func _physics_process(delta):
+	_visual_control()
 	_indicator_edit()
+	
 	for body in get_parent().bodies_present:
 		if body != null && body !=self:
 			desired_velocity.x = (body.global_position.x-global_position.x)
@@ -36,6 +38,8 @@ func _indicator_edit():
 	$z_indicator.height = velocity.z
 	$z_indicator.position.z = velocity.z/4
 
+func _visual_control():
+	self.scale = Vector3(1+mass*pow(0.1,11),1+mass*pow(0.1,11),1+mass*pow(0.1,11))
 
 func _on_area_3d_area_entered(area):
 	if mass < area.get_parent().mass:

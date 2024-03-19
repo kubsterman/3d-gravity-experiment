@@ -28,19 +28,24 @@ sky = SubResource("Sky_glkip")
 script = ExtResource("1_cou5m")
 
 [node name="Body" parent="." instance=ExtResource("1_uggw6")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0104957, 0.903115, -1.56024)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.127455, 0.939106, -1.15181)
 mass = 8e+10
 initial_velocity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="Body2" parent="." instance=ExtResource("1_uggw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28054, -0.0111303, -8.08582)
-mass = 1e+10
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7448, -2.40673, -6.17833)
+mass = 10.0
 initial_velocity = Vector3(2.08165e-12, 5, 2.08165e-12)
 
 [node name="Body3" parent="." instance=ExtResource("1_uggw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77877, 0.355905, -1.978)
-mass = 1.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65435, 0.355905, 0.978326)
+mass = 10.0
 initial_velocity = Vector3(2.08165e-12, -5, 2.08165e-12)
+
+[node name="Body4" parent="." instance=ExtResource("1_uggw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.20661, -2.09769, -2.96986)
+mass = 5e+08
+initial_velocity = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.987014, -0.0806881, 0.138898, 0.0533813, 0.980304, 0.190145, -0.151505, -0.180261, 0.971881, 2.21012, 0.357986, 3.549)
